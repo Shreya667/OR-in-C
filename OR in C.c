@@ -5,15 +5,28 @@ int main()
 {
     char answer;
 
-    printf("do you like cake? (Y/N) \n");
-    scanf(" %c",&answer);
-
-    if( (answer=='y')||(answer=='n'))
+    while(1)
+    {
+        printf("do you like cake? (Y/N) \nor press q to quit\n : ");
+        scanf(" %c",&answer);
+        if(answer=='y' || answer=='n' || answer=='Y' || answer=='N')
         {
-        printf("Good choice");
-    }
-    else{
-        printf("Tu jaa yrr");
+            system("cls");
+            if(answer=='y' || answer=='Y')
+            {
+                printf("Good choice\n");
+            }
+            else
+            {
+                printf("Tu jaa yrr\n");
+            }
+        }
+        else
+        {
+            if(answer=='q' || answer=='Q')
+                break;
+            printf("Invalid Input");
+        }
     }
     return 0;
 }
